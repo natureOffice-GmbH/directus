@@ -4,8 +4,9 @@
 	"scripts": {
 		"spellcheck": "spellchecker -p spell indefinite-article repeated-words syntax-mentions syntax-urls frontmatter",
 		"dev": "vitepress dev",
-		"build": "vitepress build",
+		"build": "vitepress build; cp CNAME .vitepress/dist/CNAME;",
 		"preview": "vitepress preview",
+		"deploy": "surge .vitepress/dist",
 		"update-thumbnail": "thumbsmith deploy .thumbsmith/docs.thumbnail.html || exit 0"
 	},
 	"devDependencies": {
@@ -16,7 +17,8 @@
 		"vue": "3.2.47"
 	},
 	"dependencies": {
-		"node-fetch": "3.3.1"
+		"node-fetch": "3.3.1",
+		"surge": "^0.23.1"
 	},
 	"version": "9.26.0"
 }
